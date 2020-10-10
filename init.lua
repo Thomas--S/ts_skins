@@ -9,6 +9,7 @@ end
 local modpath = minetest.get_modpath("ts_skins")
 
 dofile(modpath.."/base.lua")
+dofile(modpath.."/clothing.lua")
 dofile(modpath.."/palettes.lua")
 dofile(modpath.."/unified_inventory.lua")
 dofile(modpath.."/3d_armor.lua")

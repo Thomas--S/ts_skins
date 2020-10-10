@@ -20,7 +20,7 @@ ts_skins.palettes.eye_colors = {
 	name = "eye_color",
 	colors = {
 		"#A61E10", "#0000EF", "#343471", "#4B6D0A", "#6D400B",
-		"#2A1905",
+		"#2A1905", "#4C6157",
 	}
 }
 
@@ -30,14 +30,16 @@ ts_skins.palettes.hair_colors = {
 	colors = {
 		"#CEC8B0", "#E2A125", "#B8640E", "#804f1E", "#4E3012",
 		"#2B1814", "#D83304", "#D80416", "#FF00F8", "#4E13E4",
-		"#2AD1FD", "#0DDC3A"
+		"#2AD1FD", "#0DDC3A",
 	}
 }
 
 ts_skins.palettes.mouth_colors = {
 	desc = "Mouth Color",
 	name = "mouth_color",
-	colors = {"#7C6F66", "#C4353F", "#DD2BC0"}
+	colors = {
+		"#7C6F66", "#C4353F", "#DD2BC0",
+	}
 }
 
 ts_skins.styles.eye_type = {

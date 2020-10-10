@@ -42,7 +42,7 @@ function ts_skins.set_mouth_color(name, color)
 end
 
 function ts_skins.get_hair_color(name)
-	return ts_skins.storage_get(name.."_hair_color", "#0000EF")
+	return ts_skins.storage_get(name.."_hair_color", "#4E3012")
 end
 
 function ts_skins.set_hair_color(name, color)
