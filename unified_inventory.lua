@@ -12,7 +12,7 @@ unified_inventory.register_page("ts_skins", {
 		local open_palette = ts_skins.get_open_palette(player:get_player_name(), 5, .5)
 		local fs = "background[0.06,"..fy..";7.92,7.52;3d_armor_ui_form.png]"
 		fs = fs .. "container[0,"..fy.."]"
-		fs = fs .. "list[player:"..name..";clothing;0,0;2,3;]"
+		fs = fs .. "list[player:"..name..";ts_skins_clothing;0,0;2,3;]"
 		fs = fs .. "real_coordinates[true]"
 		fs = fs .. "label[0.5,0;Clothing]"
 		fs = fs .. "label[5,-.5;Body]"
@@ -27,7 +27,7 @@ unified_inventory.register_page("ts_skins", {
 			fs = fs .. ts_skins.get_style_dropdown(7, 2.65, 2, .75, "hair_type", ts_skins.get_hair_type(name))
 		end
 		fs = fs .. "listring[current_player;main]"
-		fs = fs .. "listring[player:"..name..";clothing]"
+		fs = fs .. "listring[player:"..name..";ts_skins_clothing]"
 		fs = fs .. "real_coordinates[false]"
 		fs = fs .. "container_end[]"
 		return {

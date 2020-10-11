@@ -2,15 +2,22 @@ local function dye_to_color(name)
 	if not unifieddyes or not unifieddyes.get_color_from_dye_name then
 		return "#ffffff"
 	end
+	if name == "dye:brown" then
+		return "#b43500"
+	elseif name == "dye:pink" then
+		return "#ff5050"
+	end
 	return "#"..unifieddyes.get_color_from_dye_name(name)
 end
 
 --[[
 	def = {
-		type = "shoes" | "trousers" | "shirt" | "sweater" | "toga" | "belt" | "jacket" | "cape" | "hat" | "glove" | "face_accessory", -- Used for correct layering
+		type = "shoes" | "trousers" | "shirt" | "sweater" | "tie" | "toga" | "belt" | "jacket" | "cape" | "hat" | "glove" | "face_accessory", -- Used for correct layering
 		description = "", -- Description of the item
 		skin = "", -- Texture for the skin; must be 64x32px
 		inventory_image = "", -- Inventory image for the item
+		skin_overlay = "", -- Optional overlay texture for the skin; must be 64x32px; doesn't get colored
+		inventory_overlay = "", -- Optional overlay image for the inventory; doesn't get colored
 		colorable = false, -- Optional; allows meta-based coloring; requires unifieddyes
 		default_color = ColorString, -- Optional; defines the initial color.
 		recipe = {
@@ -24,12 +31,15 @@ function ts_skins.register_clothing(name, def)
 	minetest.register_craftitem(":ts_skins:clothing_"..name, {
 		description = def.description,
 		inventory_image = def.inventory_image,
+		inventory_overlay = def.inventory_overlay,
 		_ts_skins = {
 			type = def.type,
 			skin = def.skin,
-			colorable = def.colorable
+			colorable = def.colorable,
+			skin_overlay = def.skin_overlay,
 		},
-		color = def.default_color
+		color = def.default_color,
+		stack_max = 1,
 	})
 	if def.recipe then
 		local item = "ts_skins:clothing_"..name
@@ -127,7 +137,7 @@ ts_skins.register_clothing("trousers", {
 })
 
 ts_skins.register_clothing("shorts", {
-	type = "trousers", -- Should be below trousers
+	type = "trousers",
 	description = "Shorts",
 	skin = "ts_skins_shorts.png",
 	inventory_image = "ts_skins_shorts_inv.png",
@@ -152,18 +162,172 @@ ts_skins.register_clothing("shoes", {
 	}
 })
 
+ts_skins.register_clothing("belt", {
+	type = "belt",
+	description = "Belt",
+	skin = "ts_skins_belt.png",
+	skin_overlay = "ts_skins_belt_overlay.png",
+	inventory_image = "ts_skins_belt_inv.png",
+	inventory_overlay = "ts_skins_belt_inv_overlay.png",
+	colorable = true,
+	default_color = dye_to_color("dye:black"),
+	recipe = {
+		{ "farming:string", "default:gold_ingot", "farming:string" },
+	}
+})
+
+ts_skins.register_clothing("trousers_camo", {
+	type = "trousers",
+	description = "Trousers (Camouflage)",
+	skin = "ts_skins_trousers_camo.png",
+	inventory_image = "ts_skins_trousers_camo_inv.png",
+	recipe = {
+		{ "wool:black", "wool:dark_green", "wool:green" },
+		{ "wool:dark_green", "", "wool:dark_green" },
+		{ "wool:dark_green", "", "wool:brown" },
+	}
+})
+
+ts_skins.register_clothing("shirt_camo", {
+	type = "sweater", -- Should be above trousers
+	description = "Shirt (Camouflage)",
+	skin = "ts_skins_shirt_camo.png",
+	inventory_image = "ts_skins_shirt_camo_inv.png",
+	recipe = {
+		{ "wool:dark_green", "", "wool:dark_green" },
+		{ "wool:dark_green", "wool:black", "wool:dark_green" },
+		{ "wool:green", "wool:dark_green", "wool:brown" },
+	}
+})
+
+ts_skins.register_clothing("cap_camo", {
+	type = "hat",
+	description = "Cap (Camouflage)",
+	skin = "ts_skins_cap_camo.png",
+	inventory_image = "ts_skins_cap_camo_inv.png",
+	recipe = {
+		{ "wool:green", "wool:dark_green", "wool:brown" },
+	}
+})
+
+ts_skins.register_clothing("hoodie", {
+	type = "hat", -- The hood should cover the hair
+	description = "Hoodie",
+	skin = "ts_skins_hoodie.png",
+	skin_overlay = "ts_skins_hoodie_overlay.png",
+	inventory_image = "ts_skins_hoodie_inv.png",
+	inventory_overlay = "ts_skins_hoodie_inv_overlay.png",
+	colorable = true,
+	default_color = dye_to_color("dye:red"),
+	recipe = {
+		{ "wool:red", "", "wool:red" },
+		{ "wool:red", "farming:string", "wool:red" },
+		{ "wool:red", "wool:red", "wool:red" },
+	}
+})
+
+ts_skins.register_clothing("sunglasses", {
+	type = "face_accessory",
+	description = "Sunglasses",
+	skin = "ts_skins_sunglasses.png",
+	inventory_image = "ts_skins_sunglasses_inv.png",
+	recipe = {
+		{ "dye:black", "", "dye:black" },
+		{ "default:obsidian_glass", "default:steel_ingot", "default:obsidian_glass" },
+	}
+})
+
+ts_skins.register_clothing("tie", {
+	type = "tie",
+	description = "Tie",
+	skin = "ts_skins_tie.png",
+	inventory_image = "ts_skins_tie_inv.png",
+	colorable = true,
+	default_color = dye_to_color("dye:red"),
+	recipe = {
+		{ "wool:red" },
+		{ "wool:red" },
+		{ "wool:red" },
+	}
+})
+
+ts_skins.register_clothing("shirt", {
+	type = "shirt",
+	description = "Shirt",
+	skin = "ts_skins_shirt.png",
+	inventory_image = "ts_skins_shirt_inv.png",
+	colorable = true,
+	default_color = dye_to_color("dye:white"),
+	recipe = {
+		{ "farming:string", "farming:string", "farming:string" },
+		{ "farming:string", "farming:string", "farming:string" },
+		{ "", "farming:string", "" },
+	}
+})
+
+ts_skins.register_clothing("tshirt", {
+	type = "shirt",
+	description = "T-Shirt",
+	skin = "ts_skins_tshirt.png",
+	inventory_image = "ts_skins_tshirt_inv.png",
+	colorable = true,
+	default_color = dye_to_color("dye:white"),
+	recipe = {
+		{ "farming:string", "", "farming:string" },
+		{ "farming:string", "farming:string", "farming:string" },
+		{ "farming:string", "farming:string", "farming:string" },
+	}
+})
+
+ts_skins.register_clothing("jacket_open", {
+	type = "jacket",
+	description = "Jacket (Open)",
+	skin = "ts_skins_jacket_open.png",
+	inventory_image = "ts_skins_jacket_open_inv.png",
+	colorable = true,
+	default_color = dye_to_color("dye:black"),
+	recipe = {
+		{ "wool:black", "", "wool:black" },
+		{ "wool:black", "", "wool:black" },
+		{ "wool:black", "", "wool:black" },
+	}
+})
+
+ts_skins.register_clothing("jacket_closed", {
+	type = "jacket",
+	description = "Jacket (Closed)",
+	skin = "ts_skins_jacket_closed.png",
+	inventory_image = "ts_skins_jacket_closed_inv.png",
+	colorable = true,
+	default_color = dye_to_color("dye:black"),
+	recipe = {
+		{ "wool:black", "", "wool:black" },
+		{ "wool:black", "", "wool:black" },
+		{ "wool:black", "wool:black", "wool:black" },
+	}
+})
+
 
 
 minetest.register_allow_player_inventory_action(function(player, action, inventory, inventory_info)
-	-- TODO
+	local stack
+	if action == "move" and inventory_info.to_list and inventory_info.to_list == "ts_skins_clothing" then
+		stack = inventory:get_stack(inventory_info.from_list, inventory_info.from_index)
+	elseif action == "put" and inventory_info.listname and inventory_info.listname == "ts_skins_clothing" then
+		stack = inventory_info.stack
+	end
+	if stack then
+		return stack:get_definition()._ts_skins and 1 or 0
+	end
 end)
 
 minetest.register_on_player_inventory_action(function(player, action, inventory, inventory_info)
 	local player_name = player:get_player_name()
-	if inventory_info.from_list and inventory_info.from_list == "clothing"
-		or inventory_info.to_list and inventory_info.to_list == "clothing"
-		or inventory_info.listname and inventory_info.listname == "clothing"
+	if inventory_info.from_list and inventory_info.from_list == "ts_skins_clothing"
+		or inventory_info.to_list and inventory_info.to_list == "ts_skins_clothing"
+		or inventory_info.listname and inventory_info.listname == "ts_skins_clothing"
 	then
 		ts_skins.update_skin(player_name)
+		armor:update_skin(player_name)
 	end
 end)
