@@ -7,7 +7,7 @@ end
 
 --[[
 	def = {
-		type = "shoes" | "trousers" | "shirt" | "sweater" | "belt" | "jacket" | "cape" | "hat" | "glove" | "face_accessory", -- Used for correct layering
+		type = "shoes" | "trousers" | "shirt" | "sweater" | "toga" | "belt" | "jacket" | "cape" | "hat" | "glove" | "face_accessory", -- Used for correct layering
 		description = "", -- Description of the item
 		skin = "", -- Texture for the skin; must be 64x32px
 		inventory_image = "", -- Inventory image for the item
@@ -29,6 +29,7 @@ function ts_skins.register_clothing(name, def)
 			skin = def.skin,
 			colorable = def.colorable
 		},
+		color = def.default_color
 	})
 	if def.recipe then
 		local item = "ts_skins:clothing_"..name
@@ -97,8 +98,22 @@ ts_skins.register_clothing("pullover", {
 	}
 })
 
+ts_skins.register_clothing("tanktop", {
+	type = "shirt", -- Should be below trousers
+	description = "Tank Top",
+	skin = "ts_skins_tanktop.png",
+	inventory_image = "ts_skins_tanktop_inv.png",
+	colorable = true,
+	default_color = dye_to_color("dye:white"),
+	recipe = {
+		{ "farming:string", "farming:string" },
+		{ "wool:white", "wool:white" },
+		{ "wool:white", "wool:white" },
+	}
+})
+
 ts_skins.register_clothing("trousers", {
-	type = "trousers", -- Should be below trousers
+	type = "trousers",
 	description = "Trousers",
 	skin = "ts_skins_trousers.png",
 	inventory_image = "ts_skins_trousers_inv.png",
@@ -111,8 +126,21 @@ ts_skins.register_clothing("trousers", {
 	}
 })
 
+ts_skins.register_clothing("shorts", {
+	type = "trousers", -- Should be below trousers
+	description = "Shorts",
+	skin = "ts_skins_shorts.png",
+	inventory_image = "ts_skins_shorts_inv.png",
+	colorable = true,
+	default_color = dye_to_color("dye:blue"),
+	recipe = {
+		{ "wool:blue", "wool:blue", "wool:blue" },
+		{ "wool:blue", "", "wool:blue" },
+	}
+})
+
 ts_skins.register_clothing("shoes", {
-	type = "shoes", -- Should be below trousers
+	type = "shoes",
 	description = "Shoes",
 	skin = "ts_skins_shoes.png",
 	inventory_image = "ts_skins_shoes_inv.png",
@@ -123,3 +151,19 @@ ts_skins.register_clothing("shoes", {
 		{ "wool:black", "", "wool:black" },
 	}
 })
+
+
+
+minetest.register_allow_player_inventory_action(function(player, action, inventory, inventory_info)
+	-- TODO
+end)
+
+minetest.register_on_player_inventory_action(function(player, action, inventory, inventory_info)
+	local player_name = player:get_player_name()
+	if inventory_info.from_list and inventory_info.from_list == "clothing"
+		or inventory_info.to_list and inventory_info.to_list == "clothing"
+		or inventory_info.listname and inventory_info.listname == "clothing"
+	then
+		ts_skins.update_skin(player_name)
+	end
+end)

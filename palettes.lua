@@ -38,7 +38,7 @@ ts_skins.palettes.mouth_colors = {
 	desc = "Mouth Color",
 	name = "mouth_color",
 	colors = {
-		"#7C6F66", "#C4353F", "#DD2BC0",
+		"#7C6F66", "#A05252", "#C4353F", "#DD2BC0",
 	}
 }
 
