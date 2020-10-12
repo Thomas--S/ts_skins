@@ -6,6 +6,10 @@ Originally designed for the TechAge Survival Server.
 
 ## License
 
+**Source Code**: MIT License, Copyright (c) 2020 Thomas S.
+
+**Media/Textures**:
+
 `ts_skins_shading.png`:  
 Based on `Shadow Shadow Shadow XD` by [Fedora P](http://minetest.fensta.bplaced.net/#author=Fedora%20P) published on [Addis Open MT-Skin Database](http://minetest.fensta.bplaced.net/#name=Shadow%20Shadow%20Shadow%20XD) under the [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) license; modified by Thomas S.
 
@@ -37,3 +41,6 @@ Based on `My younger Brother` by [philipbenr](http://minetest.fensta.bplaced.net
 
 `ts_skins_jacket_closed.png`, `ts_skins_jacket_closed_inv.png`:  
 Based on `masterchieft` by [edwar](http://minetest.fensta.bplaced.net/#author=edwar) published on [Addis Open MT-Skin Database](http://minetest.fensta.bplaced.net/#name=masterchieft) under the [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) license; modified by Thomas S.
+
+Everything else:  
+[CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), made by Thomas S.
