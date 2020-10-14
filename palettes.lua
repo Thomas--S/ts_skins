@@ -72,7 +72,7 @@ function ts_skins.get_open_palette(name, x, y)
 	for i,c in ipairs(palette.colors) do
 		local bx = ((i-1) % 5) * 0.6 + 0.1
 		local by = math.floor((i-1) / 5) * 0.6 + 0.6
-		fs = fs .. "image_button["..bx..","..by..";.5,.5;ts_skins_white.png^[colorize:"..c..";ts_skins_set_"..palette.name.."_"..c..";]"
+		fs = fs .. "image_button["..bx..","..by..";.5,.5;"..minetest.formspec_escape("ts_skins_white.png^[colorize:")..c..";ts_skins_set_"..palette.name.."_"..c..";]"
 	end
 	fs = fs .. "container_end[]"
 	return fs
