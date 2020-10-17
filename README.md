@@ -16,6 +16,7 @@ Based on `Shadow Shadow Shadow XD` by [Fedora P](http://minetest.fensta.bplaced.
 `ts_skins_hair_normal.png`, `ts_skins_hair_normal_shading.png`, `ts_skins_hair_bald_patch.png`, `ts_skins_hair_bald_patch_shading.png`,
 `ts_skins_pullover.png`, `ts_skins_pullover_inv.png`, `ts_skins_shoes.png`, `ts_skins_shoes_inv.png`,
 `ts_skins_shorts.png`, `ts_skins_shorts_inv.png`, `ts_skins_tanktop.png`, `ts_skins_tanktop_inv.png`,
+`ts_skins_trousers.png`, `ts_skins_trousers_inv.png`,
 `ts_skins_belt.png`, `ts_skins_belt_inv.png`, `ts_skins_belt_overlay.png`, `ts_skins_belt_inv_overlay.png`:  
 Based on Minetest Game's `character.png` by Jordach published under the [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) license; modified by Thomas S.
 
