@@ -63,17 +63,38 @@ function ts_skins.set_hair_type(name, type)
 	ts_skins.update_skin(name)
 end
 
-function ts_skins.update_skin(name)
-	if not minetest.player_exists(name) then return end
-	-- Body
-	local skin_tone = ts_skins.get_skin_tone(name)
-	local eye_color = ts_skins.get_eye_color(name)
-	local eye_type = ts_skins.get_eye_type(name)
-	local mouth_color = ts_skins.get_mouth_color(name)
-	local hair_color = ts_skins.get_hair_color(name)
-	local hair_type = ts_skins.get_hair_type(name)
+function ts_skins.get_body_features(name)
+	return {
+		skin_tone = ts_skins.get_skin_tone(name),
+		eye_color = ts_skins.get_eye_color(name),
+		eye_type = ts_skins.get_eye_type(name),
+		mouth_color = ts_skins.get_mouth_color(name),
+		hair_color = ts_skins.get_hair_color(name),
+		hair_type = ts_skins.get_hair_type(name),
+	}
+end
 
-	-- Clothing
+function ts_skins.get_texture_for_stack(stack)
+	local def = stack:get_definition()
+	if not def._ts_skins then
+		return nil, nil
+	end
+	local color = stack:get_meta():get_string("color")
+	if not color or color == "" then
+		color = def.color
+	end
+	if not color or color == "" then
+		color = "#ffffff"
+	end
+	local texture = "("..def._ts_skins.skin.."^[multiply:"..color
+	if def._ts_skins.skin_overlay then
+		texture = texture .. "^"..def._ts_skins.skin_overlay
+	end
+	texture = texture .. ")"
+	return def._ts_skins.type, texture
+end
+
+function ts_skins.get_clothing_textures(name)
 	local l = {
 		shoes = {},
 		trousers = {},
@@ -89,40 +110,38 @@ function ts_skins.update_skin(name)
 		face_accessory = {}
 	}
 
+	if not minetest.player_exists(name) then
+		return l
+	end
 	local inv = minetest.get_inventory({ type = "player", name = name })
-	if not inv then return end
+	if not inv then
+		return l
+	end
 	local list = inv:get_list("ts_skins_clothing")
-	if not list then return end
+	if not list then
+		return l
+	end
 	for _,item in ipairs(list) do
-		local def = item:get_definition()
-		if def._ts_skins then
-			local color = item:get_meta():get_string("color")
-			if not color or color == "" then
-				color = def.color
-			end
-			if not color or color == "" then
-				color = "#ffffff"
-			end
-			local t = l[def._ts_skins.type]
+		local clothing_type, texture = ts_skins.get_texture_for_stack(item)
+		if clothing_type and texture then
+			local t = l[clothing_type]
 			if t and type(t) == "table" then
-				local texture = "("..def._ts_skins.skin.."^[multiply:"..color
-				if def._ts_skins.skin_overlay then
-					texture = texture .. "^"..def._ts_skins.skin_overlay
-				end
-				texture = texture .. ")"
 				t[#t+1] = texture
 			end
 		end
 	end
+	return l
+end
 
+function ts_skins.build_skin_texture(body, clothing)
 	local empty = function(t) return next(t) == nil end
-	local trouser_missing = empty(l.trousers) and empty(l.toga)
-	local top_missing = empty(l.shirt) and empty(l.sweater) and empty(l.toga)
+	local trouser_missing = empty(clothing.trousers) and empty(clothing.toga)
+	local top_missing = empty(clothing.shirt) and empty(clothing.sweater) and empty(clothing.toga)
 
 	-- Build skin texture
-	local skin = "ts_skins_base.png^[colorize:"..skin_tone.."^ts_skins_shading.png"
-	skin = skin .. "^(ts_skins_white.png^[colorize:"..eye_color.."^[resize:64x32^ts_skins_eyes_"..eye_type..".png^[makealpha:255,0,255)"
-	skin = skin .. "^(ts_skins_mouth_normal.png^[colorize:"..mouth_color.."^[opacity:70)"
+	local skin = "ts_skins_base.png^[colorize:"..body.skin_tone.."^ts_skins_shading.png"
+	skin = skin .. "^(ts_skins_white.png^[colorize:"..body.eye_color.."^[resize:64x32^ts_skins_eyes_"..body.eye_type..".png^[makealpha:255,0,255)"
+	skin = skin .. "^(ts_skins_mouth_normal.png^[colorize:"..body.mouth_color.."^[opacity:70)"
 
 	if trouser_missing then
 		skin = skin .. "^(ts_skins_shorts.png)"
@@ -131,25 +150,31 @@ function ts_skins.update_skin(name)
 		skin = skin .. "^(ts_skins_tanktop.png)"
 	end
 
-	for _,texture in ipairs(l.face_accessory) do skin = skin .. "^"..texture end
-	for _,texture in ipairs(l.shirt)          do skin = skin .. "^"..texture end
-	for _,texture in ipairs(l.trousers)       do skin = skin .. "^"..texture end
-	for _,texture in ipairs(l.tie)            do skin = skin .. "^"..texture end
-	for _,texture in ipairs(l.sweater)        do skin = skin .. "^"..texture end
-	for _,texture in ipairs(l.glove)          do skin = skin .. "^"..texture end
-	for _,texture in ipairs(l.jacket)         do skin = skin .. "^"..texture end
-	for _,texture in ipairs(l.shoes)          do skin = skin .. "^"..texture end
-	for _,texture in ipairs(l.toga)           do skin = skin .. "^"..texture end
-	for _,texture in ipairs(l.belt)           do skin = skin .. "^"..texture end
-	for _,texture in ipairs(l.cape)           do skin = skin .. "^"..texture end
+	for _,texture in ipairs(clothing.face_accessory) do skin = skin .. "^"..texture end
+	for _,texture in ipairs(clothing.shirt)          do skin = skin .. "^"..texture end
+	for _,texture in ipairs(clothing.trousers)       do skin = skin .. "^"..texture end
+	for _,texture in ipairs(clothing.tie)            do skin = skin .. "^"..texture end
+	for _,texture in ipairs(clothing.sweater)        do skin = skin .. "^"..texture end
+	for _,texture in ipairs(clothing.glove)          do skin = skin .. "^"..texture end
+	for _,texture in ipairs(clothing.shoes)          do skin = skin .. "^"..texture end
+	for _,texture in ipairs(clothing.toga)           do skin = skin .. "^"..texture end
+	for _,texture in ipairs(clothing.jacket)         do skin = skin .. "^"..texture end
+	for _,texture in ipairs(clothing.belt)           do skin = skin .. "^"..texture end
+	for _,texture in ipairs(clothing.cape)           do skin = skin .. "^"..texture end
 
-	if hair_type ~= "bald" then
-		skin = skin .. "^(ts_skins_hair_"..hair_type..".png^[colorize:"..hair_color.."^ts_skins_hair_"..hair_type.."_shading.png)"
+	if body.hair_type ~= "bald" then
+		skin = skin .. "^(ts_skins_hair_"..body.hair_type..".png^[colorize:"..body.hair_color.."^ts_skins_hair_"..body.hair_type.."_shading.png)"
 	end
 
-	for _,texture in ipairs(l.hat)            do skin = skin .. "^"..texture end
+	for _,texture in ipairs(clothing.hat)            do skin = skin .. "^"..texture end
+	return skin
+end
 
-	-- Save
+function ts_skins.update_skin(name)
+	if not minetest.player_exists(name) then return end
+	local body = ts_skins.get_body_features(name)
+	local clothing = ts_skins.get_clothing_textures(name)
+	local skin = ts_skins.build_skin_texture(body, clothing)
 	ts_skins.storage:set_string("skin_"..name, skin)
 end
 

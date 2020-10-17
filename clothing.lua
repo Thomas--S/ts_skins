@@ -285,11 +285,11 @@ ts_skins.register_clothing("jacket_open", {
 	skin = "ts_skins_jacket_open.png",
 	inventory_image = "ts_skins_jacket_open_inv.png",
 	colorable = true,
-	default_color = dye_to_color("dye:black"),
+	default_color = dye_to_color("dye:dark_grey"),
 	recipe = {
-		{ "wool:black", "", "wool:black" },
-		{ "wool:black", "", "wool:black" },
-		{ "wool:black", "", "wool:black" },
+		{ "wool:dark_grey", "", "wool:dark_grey" },
+		{ "wool:dark_grey", "", "wool:dark_grey" },
+		{ "wool:dark_grey", "", "wool:dark_grey" },
 	}
 })
 
@@ -299,11 +299,11 @@ ts_skins.register_clothing("jacket_closed", {
 	skin = "ts_skins_jacket_closed.png",
 	inventory_image = "ts_skins_jacket_closed_inv.png",
 	colorable = true,
-	default_color = dye_to_color("dye:black"),
+	default_color = dye_to_color("dye:dark_grey"),
 	recipe = {
-		{ "wool:black", "", "wool:black" },
-		{ "wool:black", "", "wool:black" },
-		{ "wool:black", "wool:black", "wool:black" },
+		{ "wool:dark_grey", "", "wool:dark_grey" },
+		{ "wool:dark_grey", "", "wool:dark_grey" },
+		{ "wool:dark_grey", "wool:dark_grey", "wool:dark_grey" },
 	}
 })
 
