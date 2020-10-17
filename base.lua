@@ -184,6 +184,6 @@ end
 
 minetest.register_on_joinplayer(function(player)
 	local player_name = player:get_player_name()
-	minetest.get_inventory({type = "player", name = player_name}):set_size("ts_skins_clothing", 6)
+	minetest.get_inventory({type = "player", name = player_name}):set_size("ts_skins_clothing", 9)
 	ts_skins.update_skin(player_name)
 end)
