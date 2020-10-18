@@ -43,5 +43,8 @@ Based on `My younger Brother` by [philipbenr](http://minetest.fensta.bplaced.net
 `ts_skins_jacket_closed.png`, `ts_skins_jacket_closed_inv.png`:  
 Based on `masterchieft` by [edwar](http://minetest.fensta.bplaced.net/#author=edwar) published on [Addis Open MT-Skin Database](http://minetest.fensta.bplaced.net/#name=masterchieft) under the [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) license; modified by Thomas S.
 
+`ts_skins_sneakers.png`, `ts_skins_sneakers_inv.png`, `ts_skins_sneakers_overlay.png`, `ts_skins_sneakers_inv_overlay.png`:  
+Based on `NejWolf` by [NejWolf](http://minetest.fensta.bplaced.net/#author=NejWolf) published on [Addis Open MT-Skin Database](http://minetest.fensta.bplaced.net/#name=NejWolf) under the [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) license; modified by Thomas S.
+
 Everything else:  
 [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), made by Thomas S.

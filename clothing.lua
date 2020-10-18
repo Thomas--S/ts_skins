@@ -162,6 +162,21 @@ ts_skins.register_clothing("shoes", {
 	}
 })
 
+ts_skins.register_clothing("sneakers", {
+	type = "shoes",
+	description = "Sneakers",
+	skin = "ts_skins_sneakers.png",
+	skin_overlay = "ts_skins_sneakers_overlay.png",
+	inventory_image = "ts_skins_sneakers_inv.png",
+	inventory_overlay = "ts_skins_sneakers_inv_overlay.png",
+	colorable = true,
+	default_color = dye_to_color("dye:red"),
+	recipe = {
+		{ "wool:red", "", "wool:red" },
+		{ "wool:white", "", "wool:white" },
+	}
+})
+
 ts_skins.register_clothing("belt", {
 	type = "belt",
 	description = "Belt",
