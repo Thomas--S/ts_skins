@@ -237,6 +237,16 @@ ts_skins.register_clothing("sunglasses", {
 	}
 })
 
+ts_skins.register_clothing("face_mask", {
+	type = "face_accessory",
+	description = "Face Mask",
+	skin = "ts_skins_face_mask.png",
+	inventory_image = "ts_skins_face_mask_inv.png",
+	recipe = {
+		{ "farming:string", "wool:cyan", "farming:string" },
+	}
+})
+
 ts_skins.register_clothing("tie", {
 	type = "tie",
 	description = "Tie",
