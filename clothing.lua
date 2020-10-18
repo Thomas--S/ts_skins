@@ -332,6 +332,18 @@ ts_skins.register_clothing("jacket_closed", {
 	}
 })
 
+ts_skins.register_clothing("safety_vest", {
+	type = "cape", -- Should be above most other clothing
+	description = "Safety Vest",
+	skin = "ts_skins_safety_vest.png",
+	inventory_image = "ts_skins_safety_vest_inv.png",
+	recipe = {
+		{ "wool:yellow", "", "wool:yellow" },
+		{ "wool:white", "", "wool:white" },
+		{ "wool:yellow", "wool:yellow", "wool:yellow" },
+	}
+})
+
 
 
 minetest.register_allow_player_inventory_action(function(player, action, inventory, inventory_info)
