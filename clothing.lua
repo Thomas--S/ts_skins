@@ -85,6 +85,7 @@ if unifieddyes then
 
 		local meta = itemstack:get_meta()
 		meta:set_string("color", dye_to_color(dye:get_name()))
+		meta:set_string("description", clothing:get_definition().description.." ("..dye:get_description():gsub(" Dye", "")..")")
 		return itemstack
 	end
 
