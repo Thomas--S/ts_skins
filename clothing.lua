@@ -12,7 +12,7 @@ end
 
 --[[
 	def = {
-		type = "shoes" | "trousers" | "shirt" | "sweater" | "tie" | "toga" | "belt" | "jacket" | "cape" | "hat" | "glove" | "face_accessory", -- Used for correct layering
+		type = "shoes" | "trousers" | "shirt" | "sweater" | "tie" | "toga" | "coat" | "belt" | "jacket" | "cape" | "hat" | "glove" | "face_accessory", -- Used for correct layering
 		description = "", -- Description of the item
 		skin = "", -- Texture for the skin; must be 64x32px
 		inventory_image = "", -- Inventory image for the item

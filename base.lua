@@ -102,6 +102,7 @@ function ts_skins.get_clothing_textures(name)
 		sweater = {},
 		tie = {},
 		toga = {},
+		coat = {},
 		belt = {},
 		jacket = {},
 		cape = {},
@@ -158,8 +159,9 @@ function ts_skins.build_skin_texture(body, clothing)
 	for _,texture in ipairs(clothing.glove)          do skin = skin .. "^"..texture end
 	for _,texture in ipairs(clothing.shoes)          do skin = skin .. "^"..texture end
 	for _,texture in ipairs(clothing.toga)           do skin = skin .. "^"..texture end
-	for _,texture in ipairs(clothing.jacket)         do skin = skin .. "^"..texture end
+	for _,texture in ipairs(clothing.coat)           do skin = skin .. "^"..texture end
 	for _,texture in ipairs(clothing.belt)           do skin = skin .. "^"..texture end
+	for _,texture in ipairs(clothing.jacket)         do skin = skin .. "^"..texture end
 	for _,texture in ipairs(clothing.cape)           do skin = skin .. "^"..texture end
 
 	if body.hair_type ~= "bald" then
