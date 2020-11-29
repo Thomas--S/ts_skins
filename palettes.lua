@@ -28,9 +28,9 @@ ts_skins.palettes.hair_colors = {
 	desc = "Hair Color",
 	name = "hair_color",
 	colors = {
-		"#CEC8B0", "#E2A125", "#B8640E", "#804f1E", "#4E3012",
-		"#2B1814", "#D83304", "#D80416", "#FF00F8", "#4E13E4",
-		"#2AD1FD", "#0DDC3A",
+		"#FFFFFF", "#C1C1C1", "#CEC8B0", "#E2A125", "#B8640E",
+		"#804f1E", "#4E3012", "#2B1814", "#D83304", "#D80416",
+		"#FF00F8", "#4E13E4", "#2AD1FD", "#0DDC3A",
 	}
 }
 

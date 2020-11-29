@@ -163,6 +163,17 @@ ts_skins.register_clothing("shoes", {
 	}
 })
 
+ts_skins.register_clothing("boots", {
+	type = "shoes",
+	description = "Boots",
+	skin = "ts_skins_boots.png",
+	inventory_image = "ts_skins_boots_inv.png",
+	recipe = {
+		{ "wool:black" },
+		{ "ts_skins:clothing_shoes" },
+	}
+})
+
 ts_skins.register_clothing("sneakers", {
 	type = "shoes",
 	description = "Sneakers",
@@ -342,6 +353,52 @@ ts_skins.register_clothing("safety_vest", {
 		{ "wool:yellow", "", "wool:yellow" },
 		{ "wool:white", "", "wool:white" },
 		{ "wool:yellow", "wool:yellow", "wool:yellow" },
+	}
+})
+
+ts_skins.register_clothing("trousers_santa", {
+	type = "trousers",
+	description = "Trousers (Santa)",
+	skin = "ts_skins_trousers_santa.png",
+	inventory_image = "ts_skins_trousers_santa_inv.png",
+	recipe = {
+		{ "wool:red", "wool:red", "wool:red" },
+		{ "wool:red", "", "wool:red" },
+		{ "wool:black", "", "wool:black" },
+	}
+})
+
+ts_skins.register_clothing("jacket_santa", {
+	type = "sweater",
+	description = "Jacket (Santa)",
+	skin = "ts_skins_jacket_santa.png",
+	inventory_image = "ts_skins_jacket_santa_inv.png",
+	recipe = {
+		{ "wool:white", "", "wool:white" },
+		{ "wool:red", "wool:white", "wool:red" },
+		{ "wool:red", "wool:red", "wool:red" },
+	}
+})
+
+ts_skins.register_clothing("hat_santa", {
+	type = "hat",
+	description = "Hat (Santa)",
+	skin = "ts_skins_hat_santa.png",
+	inventory_image = "ts_skins_hat_santa_inv.png",
+	recipe = {
+		{ "wool:red", "wool:red", "wool:red" },
+		{ "", "wool:white", "" },
+	}
+})
+
+ts_skins.register_clothing("beard_santa", {
+	type = "face_accessory",
+	description = "Fake Beard (Santa)",
+	skin = "ts_skins_beard_santa.png",
+	inventory_image = "ts_skins_beard_santa_inv.png",
+	recipe = {
+		{ "wool:white", "wool:white", "wool:white" },
+		{ "", "wool:white", "" },
 	}
 })
 

@@ -46,5 +46,8 @@ Based on `masterchieft` by [edwar](http://minetest.fensta.bplaced.net/#author=ed
 `ts_skins_sneakers.png`, `ts_skins_sneakers_inv.png`, `ts_skins_sneakers_overlay.png`, `ts_skins_sneakers_inv_overlay.png`:  
 Based on `NejWolf` by [NejWolf](http://minetest.fensta.bplaced.net/#author=NejWolf) published on [Addis Open MT-Skin Database](http://minetest.fensta.bplaced.net/#name=NejWolf) under the [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) license; modified by Thomas S.
 
+`ts_skins_beard.png`, `ts_skins_beard_inv.png`, `ts_skins_boots.png`, `ts_skins_boots_inv.png`, `ts_skins_hat_santa.png`, `ts_skins_hat_santa_inv.png`, `ts_skins_jacket_santa.png`, `ts_skins_jacket_santa_inv.png`, `ts_skins_trousers_santa.png`, `ts_skins_trousers_santa_inv.png`:  
+Based on `santa` by [jordan4ibanez](http://minetest.fensta.bplaced.net/#author=jordan4ibanez) published on [Addis Open MT-Skin Database](http://minetest.fensta.bplaced.net/#name=santa) under the [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) license; modified by Thomas S.
+
 Everything else:  
 [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), made by Thomas S.
