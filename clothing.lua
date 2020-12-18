@@ -424,5 +424,8 @@ minetest.register_on_player_inventory_action(function(player, action, inventory,
 	then
 		ts_skins.update_skin(player_name)
 		armor:update_skin(player_name)
+		minetest.after(0.1, function()
+			ts_skins.update_ui(player_name)
+		end)
 	end
 end)

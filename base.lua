@@ -1,5 +1,3 @@
-ts_skins.apple = true
-
 ts_skins.storage_get = function(key, default)
 	local value = ts_skins.storage:get_string(key)
 	if value and value ~= "" then
@@ -189,3 +187,12 @@ minetest.register_on_joinplayer(function(player)
 	minetest.get_inventory({type = "player", name = player_name}):set_size("ts_skins_clothing", 9)
 	ts_skins.update_skin(player_name)
 end)
+
+function ts_skins.update_ui(name)
+	local player = minetest.get_player_by_name(name)
+	if not player then
+		return
+	end
+	unified_inventory.set_inventory_formspec(player,
+			unified_inventory.current_page[name])
+end
