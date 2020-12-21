@@ -17,7 +17,7 @@ unified_inventory.register_page("ts_skins", {
 
 		local fy = perplayer_formspec.formspec_y
 		local open_palette = ts_skins.get_open_palette(player:get_player_name(), 6.5, 0.5)
-		local fs = "background[0,"..fy..";3,3;ui_crafting_form.png^[sheet:2x1:0,0]"
+		local fs = "background[0,"..fy..";3,3;"..minetest.formspec_escape("ui_crafting_form.png^[sheet:2x1")..":0,0]"
 		fs = fs .. "background[0,"..(fy + 3.5)..";8,4;ui_main_inventory.png]"
 		fs = fs .. "container[0,"..fy.."]"
 		fs = fs .. "list[player:"..name..";ts_skins_clothing;0,0;3,3;]"
