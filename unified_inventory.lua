@@ -61,7 +61,12 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 	elseif fields.ts_skins_close_palette then
 		ts_skins.open_palettes[name] = nil
 	end
-	minetest.after(0, function()
-		ts_skins.update_ui(name)
-	end)
+
+	for k,v in pairs(fields) do
+		if k:sub(1,8) == "ts_skins" then
+			minetest.after(0, function()
+				ts_skins.update_ui(name)
+			end)
+		end
+	end
 end)
