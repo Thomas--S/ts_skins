@@ -15,8 +15,8 @@ Based on `Shadow Shadow Shadow XD` by [Fedora P](http://minetest.fensta.bplaced.
 
 `ts_skins_hair_normal.png`, `ts_skins_hair_normal_shading.png`, `ts_skins_hair_bald_patch.png`, `ts_skins_hair_bald_patch_shading.png`,
 `ts_skins_pullover.png`, `ts_skins_pullover_inv.png`, `ts_skins_shoes.png`, `ts_skins_shoes_inv.png`,
-`ts_skins_shorts.png`, `ts_skins_shorts_inv.png`, `ts_skins_tanktop.png`, `ts_skins_tanktop_inv.png`,
-`ts_skins_trousers.png`, `ts_skins_trousers_inv.png`,
+`ts_skins_flat_shoes.png`, `ts_skins_flat_shoes_inv.png`, `ts_skins_shorts.png`, `ts_skins_shorts_inv.png`,
+`ts_skins_tanktop.png`, `ts_skins_tanktop_inv.png`, `ts_skins_trousers.png`, `ts_skins_trousers_inv.png`,
 `ts_skins_belt.png`, `ts_skins_belt_inv.png`, `ts_skins_belt_overlay.png`, `ts_skins_belt_inv_overlay.png`:  
 Based on Minetest Game's `character.png` by Jordach published under the [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) license; modified by Thomas S.
 
@@ -48,6 +48,10 @@ Based on `NejWolf` by [NejWolf](http://minetest.fensta.bplaced.net/#author=NejWo
 
 `ts_skins_beard.png`, `ts_skins_beard_inv.png`, `ts_skins_boots.png`, `ts_skins_boots_inv.png`, `ts_skins_hat_santa.png`, `ts_skins_hat_santa_inv.png`, `ts_skins_jacket_santa.png`, `ts_skins_jacket_santa_inv.png`, `ts_skins_trousers_santa.png`, `ts_skins_trousers_santa_inv.png`:  
 Based on `santa` by [jordan4ibanez](http://minetest.fensta.bplaced.net/#author=jordan4ibanez) published on [Addis Open MT-Skin Database](http://minetest.fensta.bplaced.net/#name=santa) under the [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) license; modified by Thomas S.
+
+`ts_skins_dress.png`, `ts_skins_dress_inv.png`: Based on `Elf` by [loupicate](http://minetest.fensta.bplaced.net/#author=loupicate) published on [Addis Open MT-Skin Database](http://minetest.fensta.bplaced.net/#name=Elf) under the [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) license; modified by Thomas S.
+
+
 
 Everything else:  
 [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), made by Thomas S.

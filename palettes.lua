@@ -28,8 +28,8 @@ ts_skins.palettes.hair_colors = {
 	desc = "Hair Color",
 	name = "hair_color",
 	colors = {
-		"#FFFFFF", "#C1C1C1", "#CEC8B0", "#E2A125", "#B8640E",
-		"#804f1E", "#4E3012", "#2B1814", "#D83304", "#D80416",
+		"#FFFFFF", "#C1C1C1", "#CEC8B0", "#E4CE7A", "#E2A125",
+		"#B8640E", "#804f1E", "#4E3012", "#2B1814", "#D83304",
 		"#FF00F8", "#4E13E4", "#2AD1FD", "#0DDC3A",
 	}
 }
@@ -64,8 +64,8 @@ function ts_skins.get_open_palette(name, x, y)
 		return nil
 	end
 	local fs = "container["..x..","..y.."]"
-	fs = fs .. "label[0.1,0.25;"..minetest.formspec_escape(palette.desc).."]"
 	fs = fs .. "box[0,0;2.6,.5;#000000]"
+	fs = fs .. "label[0.1,0.25;"..minetest.formspec_escape(palette.desc).."]"
 	fs = fs .. "style[ts_skins_close_palette;bgcolor=red]"
 	fs = fs .. "button[2.6,0;.5,.5;ts_skins_close_palette;x]"
 	fs = fs .. "box[0,.5;3.1,"..math.ceil(#palette.colors / 5)*.6+.1 ..";#777777]"

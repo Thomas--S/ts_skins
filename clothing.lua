@@ -189,6 +189,18 @@ ts_skins.register_clothing("sneakers", {
 	}
 })
 
+ts_skins.register_clothing("flat_shoes", {
+	type = "shoes",
+	description = "Flat Shoes",
+	skin = "ts_skins_flat_shoes.png",
+	inventory_image = "ts_skins_flat_shoes_inv.png",
+	colorable = true,
+	default_color = dye_to_color("dye:white"),
+	recipe = {
+		{ "wool:white", "", "wool:white" },
+	}
+})
+
 ts_skins.register_clothing("belt", {
 	type = "belt",
 	description = "Belt",
@@ -398,6 +410,20 @@ ts_skins.register_clothing("beard_santa", {
 	inventory_image = "ts_skins_beard_santa_inv.png",
 	recipe = {
 		{ "wool:white", "wool:white", "wool:white" },
+		{ "", "wool:white", "" },
+	}
+})
+
+ts_skins.register_clothing("dress", {
+	type = "toga",
+	description = "Dress",
+	skin = "ts_skins_dress.png",
+	inventory_image = "ts_skins_dress_inv.png",
+	colorable = true,
+	default_color = dye_to_color("dye:white"),
+	recipe = {
+		{ "", "farming:string", "" },
+		{ "", "wool:white", "" },
 		{ "", "wool:white", "" },
 	}
 })
