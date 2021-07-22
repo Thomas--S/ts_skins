@@ -109,7 +109,7 @@ function ts_skins.get_clothing_textures(name)
 		face_accessory = {}
 	}
 
-	if not minetest.player_exists(name) then
+	if not name or name == nil or name == "" or not minetest.player_exists(name) then
 		return l
 	end
 	local inv = minetest.get_inventory({ type = "player", name = name })
