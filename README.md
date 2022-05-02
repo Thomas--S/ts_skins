@@ -6,7 +6,7 @@ Originally designed for the TechAge Survival Server.
 
 ## License
 
-**Source Code**: MIT License, Copyright (c) 2020 Thomas S.
+**Source Code**: MIT License, Copyright (c) 2020-2022 Thomas S.
 
 **Media/Textures**:
 
@@ -37,7 +37,7 @@ Based on `TheNinjaTNT` by [NinjaCraftBR](http://minetest.fensta.bplaced.net/#aut
 `ts_skins_jacket_open.png`, `ts_skins_jacket_open_inv.png`:  
 Based on `Michal VonFlynee` by [Michal VonFlynee](http://minetest.fensta.bplaced.net/#author=Michal%20VonFlynee) published on [Addis Open MT-Skin Database](http://minetest.fensta.bplaced.net/#name=Michal%20VonFlynee) under the [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) license; modified by Thomas S.
 
-`ts_skins_shirt.png`, `ts_skins_shirt_inv.png`, `ts_skins_tshirt.png`, `ts_skins_tshirt_inv.png`, `ts_skins_jacket_open.png`, `ts_skins_jacket_open_inv.png`:  
+`ts_skins_shirt.png`, `ts_skins_shirt_inv.png`, `ts_skins_tshirt.png`, `ts_skins_tshirt_inv.png`, `ts_skins_jacket_open.png`, `ts_skins_jacket_open_inv.png`, `ts_skins_jacket.png`, `ts_skins_jacket_inv.png`:  
 Based on `My younger Brother` by [philipbenr](http://minetest.fensta.bplaced.net/#author=philipbenr) published on [Addis Open MT-Skin Database](http://minetest.fensta.bplaced.net/#name=My%20younger%20Brother) under the [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) license; modified by Thomas S.
 
 `ts_skins_jacket_closed.png`, `ts_skins_jacket_closed_inv.png`:  

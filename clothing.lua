@@ -368,6 +368,38 @@ ts_skins.register_clothing("safety_vest", {
 	}
 })
 
+ts_skins.register_clothing("jacket_high_viz", {
+	type = "jacket",
+	description = "High-visibility Jacket",
+	skin = "ts_skins_jacket.png",
+	skin_overlay = "ts_skins_jacket_high_viz_overlay.png",
+	inventory_image = "ts_skins_shirt_inv.png",
+	inventory_overlay = "ts_skins_jacket_high_viz_inv_overlay.png",
+	colorable = true,
+	default_color = dye_to_color("dye:orange"),
+	recipe = {
+		{ "wool:orange", "", "wool:orange" },
+		{ "wool:yellow", "wool:grey", "wool:yellow" },
+		{ "wool:orange", "wool:orange", "wool:orange" },
+	}
+})
+
+ts_skins.register_clothing("trousers_high_viz", {
+	type = "trousers",
+	description = "High-visibility Trousers",
+	skin = "ts_skins_trousers.png",
+	skin_overlay = "ts_skins_trousers_high_viz_overlay.png",
+	inventory_image = "ts_skins_trousers_inv.png",
+	inventory_overlay = "ts_skins_trousers_high_viz_inv_overlay.png",
+	colorable = true,
+	default_color = dye_to_color("dye:orange"),
+	recipe = {
+		{ "wool:orange", "wool:orange", "wool:orange" },
+		{ "wool:yellow", "", "wool:grey" },
+		{ "wool:orange", "", "wool:orange" },
+	}
+})
+
 ts_skins.register_clothing("trousers_santa", {
 	type = "trousers",
 	description = "Trousers (Santa)",
